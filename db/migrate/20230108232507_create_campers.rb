@@ -3,8 +3,8 @@ class CreateCampers < ActiveRecord::Migration[6.1]
     create_table :campers do |t|
 
       t.timestamps
-      t.string :name
-      t.integer :age
+      t.string :name, includes: true
+      t.integer :age, numericality: {greater_than_or_equal_to: 8,less_than_or_equal_to: 18}, includes: true
      
 
     end
